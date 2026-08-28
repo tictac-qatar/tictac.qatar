@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Tic Tac للتجارة والمقاولات | مقاولات عامة وصيانة في قطر</title>
-    <!-- خطوط عربية وعالمية عالية الأناقة -->
+    <!-- خطوط عربية عالية الأناقة -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-body: #070d1b;
-            --primary-dark: #0a1428;
-            --primary-card: #111d38;
-            --accent-gold: #d4af37;
-            --accent-gold-light: #f3e5ab;
-            --accent-bronze: #c59b27;
+            --bg-body: #f8fafc;
+            --primary-dark: #0f172a;
+            --primary-color: #1e293b;
+            --card-bg: #ffffff;
+            --accent-gold: #b8860b;
             --whatsapp: #25D366;
             --whatsapp-hover: #1ebd59;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: rgba(212, 175, 55, 0.2);
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
         }
 
         * {
@@ -35,18 +34,19 @@
             overflow-x: hidden;
         }
 
-        /* الهيدر العصري الفخم */
+        /* الهيدر الأبيض العصري والنظيف */
         header {
-            background: rgba(10, 20, 40, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            padding: 18px 50px;
+            padding: 16px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
         .logo-container {
@@ -56,18 +56,15 @@
         }
 
         .logo-container img {
-            height: 50px;
+            height: 48px;
             object-fit: contain;
         }
 
         .logo-title {
-            font-size: 21px;
+            font-size: 20px;
             font-weight: 900;
-            color: #ffffff;
+            color: var(--primary-dark);
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .header-actions {
@@ -77,81 +74,76 @@
         }
 
         .lang-select {
-            background: rgba(255, 255, 255, 0.05);
+            background: #f1f5f9;
             border: 1px solid var(--border-color);
             padding: 8px 16px;
             border-radius: 10px;
             font-size: 14px;
             font-weight: 700;
-            color: var(--accent-gold-light);
+            color: var(--primary-dark);
             cursor: pointer;
             outline: none;
             transition: 0.3s;
         }
 
         .lang-select:hover, .lang-select:focus {
-            background: rgba(212, 175, 55, 0.1);
+            background: #e2e8f0;
             border-color: var(--accent-gold);
-        }
-
-        .lang-select option {
-            background: var(--primary-dark);
-            color: #fff;
         }
 
         .header-contact {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(37, 211, 102, 0.1);
+            background: #f0fdf4;
             padding: 8px 18px;
             border-radius: 50px;
             text-decoration: none;
             color: var(--whatsapp);
             font-weight: 800;
             font-size: 14px;
-            border: 1px solid rgba(37, 211, 102, 0.3);
+            border: 1px solid #bbf7d0;
             transition: 0.3s;
         }
 
         .header-contact:hover {
             background: var(--whatsapp);
             color: #ffffff;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
-        /* واجهة الـ Hero الاحترافية الخاطفة للعين */
+        /* واجهة الـ Hero الفخمة بخلفية بيضاء وبتدرجات راقية */
         .hero {
-            background: radial-gradient(circle at 50% 20%, #172a52 0%, var(--bg-body) 70%);
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             text-align: center;
-            padding: 130px 20px 100px;
+            padding: 120px 20px 90px;
             position: relative;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent-gold);
-            padding: 8px 22px;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 20px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 25px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 1px solid #fde68a;
         }
 
         .hero h1 {
-            font-size: 46px;
-            margin-bottom: 25px;
+            font-size: 42px;
+            margin-bottom: 20px;
             font-weight: 900;
-            max-width: 950px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.35;
-            color: #ffffff;
+            line-height: 1.4;
+            color: var(--primary-dark);
         }
 
         .hero h1 span {
@@ -160,7 +152,7 @@
 
         .hero p {
             font-size: 18px;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             color: var(--text-muted);
             max-width: 750px;
             margin-left: auto;
@@ -170,105 +162,89 @@
         .btn-whatsapp {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 18px 42px;
+            padding: 16px 38px;
             font-size: 18px;
             font-weight: 800;
             border: none;
-            border-radius: 14px;
+            border-radius: 12px;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
         }
 
-        /* قسم الخدمات الفاخر */
+        /* قسم الخدمات النظيف والأنيق */
         .services {
-            padding: 100px 20px;
+            padding: 90px 20px;
             max-width: 1250px;
             margin: auto;
             text-align: center;
         }
 
         .section-header {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .services h2 {
-            font-size: 38px;
+            font-size: 36px;
             margin-bottom: 12px;
             font-weight: 900;
-            color: #ffffff;
+            color: var(--primary-dark);
         }
 
         .section-subtitle {
             color: var(--text-muted);
-            font-size: 17px;
+            font-size: 16px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
-            background: var(--primary-card);
-            padding: 45px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            padding: 40px 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
             text-align: inherit;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-            opacity: 0;
-            transition: 0.4s;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-color);
-            box-shadow: 0 20px 40px rgba(11, 28, 60, 0.6);
-            background: #142242;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
+            transform: translateY(-6px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
         .service-icon {
-            width: 65px;
-            height: 65px;
-            background: rgba(212, 175, 55, 0.08);
-            border-radius: 16px;
+            width: 60px;
+            height: 60px;
+            background: #f8fafc;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin-bottom: 25px;
+            font-size: 26px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-color);
         }
 
         .service-card h3 {
-            margin-bottom: 15px;
-            color: #ffffff;
-            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-size: 20px;
             font-weight: 800;
         }
 
@@ -278,46 +254,45 @@
             line-height: 1.7;
         }
 
-        /* الفوتر الفاخر */
+        /* الفوتر الفاخر والنظيف */
         footer {
             background: var(--primary-dark);
             color: white;
             text-align: center;
-            padding: 50px 20px;
-            margin-top: 100px;
-            border-top: 1px solid var(--border-color);
+            padding: 45px 20px;
+            margin-top: 80px;
         }
 
         footer p {
             font-size: 15px;
-            color: var(--text-muted);
+            color: #94a3b8;
         }
 
         .footer-info {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 700;
             color: #fff;
-            font-size: 17px;
+            font-size: 16px;
         }
 
         /* التجاوب مع الجوال */
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
+                padding: 12px 20px;
                 flex-direction: column;
                 gap: 15px;
             }
             .hero {
-                padding: 90px 20px 60px;
+                padding: 80px 20px 60px;
             }
             .hero h1 {
-                font-size: 30px;
+                font-size: 28px;
             }
             .hero p {
-                font-size: 16px;
+                font-size: 15px;
             }
             .logo-title {
-                font-size: 18px;
+                font-size: 17px;
             }
         }
     </style>
@@ -327,7 +302,8 @@
     <!-- الهيدر -->
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Tic Tac Logo" onerror="this.style.display='none'">
+            <!-- ربط اللوجو بملف logo.svg الموجود عندك في المستودع -->
+            <img src="logo.svg" alt="Tic Tac Logo" onerror="this.style.display='none'">
             <div class="logo-title" id="brandName">Tic Tac للتجارة والمقاولات</div>
         </div>
         <div class="header-actions">
@@ -383,7 +359,7 @@
     <!-- الفوتر -->
     <footer>
         <p class="footer-info" id="footerInfo">📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com</p>
-        <p style="margin-top: 15px; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
+        <p style="margin-top: 10px; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
     </footer>
 
     <!-- سكربت تغيير اللغات الديناميكي -->
