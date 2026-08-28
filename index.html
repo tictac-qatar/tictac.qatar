@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="htmlTag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac للتجارة والمقاولات | صيانة ومقاولات عامة في قطر</title>
+    <title id="pageTitle">Tic Tac للتجارة والمقاولات | صيانة ومقاولات عامة في قطر</title>
     <style>
         :root {
             --primary: #101e38;
@@ -65,21 +65,21 @@
             gap: 15px;
         }
 
-        /* زر اختيار اللغات */
-        .lang-switch {
+        /* قائمة اختيار اللغات */
+        .lang-select {
             background: #f1f3f5;
-            border: 1px solid #dcedc8;
+            border: 1px solid #ced4da;
             padding: 6px 12px;
             border-radius: 8px;
             font-size: 14px;
             font-weight: bold;
             color: var(--primary);
             cursor: pointer;
-            text-decoration: none;
+            outline: none;
             transition: 0.3s;
         }
 
-        .lang-switch:hover {
+        .lang-select:hover {
             background: #e2e6ea;
         }
 
@@ -191,7 +191,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.04);
             border-top: 4px solid var(--primary);
-            text-align: right;
+            text-align: inherit;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -257,12 +257,16 @@
     <!-- الهيدر -->
     <header>
         <div class="logo-container">
-            <!-- إذا لم تظهر الصورة، سيظهر النص بجانبها تلقائياً -->
             <img src="logo.png" alt="Tic Tac Logo" onerror="this.style.display='none'">
-            <div class="logo-title">Tic Tac للتجارة والمقاولات</div>
+            <div class="logo-title" id="brandName">Tic Tac للتجارة والمقاولات</div>
         </div>
         <div class="header-actions">
-            <a href="#" class="lang-switch">English 🌐</a>
+            <!-- قائمة تغيير اللغات -->
+            <select id="languageSelect" class="lang-select" onchange="changeLanguage(this.value)">
+                <option value="ar">العربية 🇸🇦</option>
+                <option value="en">English 🇬🇧</option>
+                <option value="ur">اردو 🇵🇰</option>
+            </select>
             <a href="https://wa.me/97466608077" target="_blank" class="header-contact">
                 <span>💬 66608077</span>
             </a>
@@ -271,40 +275,130 @@
 
     <!-- الواجهة الرئيسية -->
     <section class="hero">
-        <h1>صيانة مبانى ومقاولات عامة في قطر.. بسرعة ودقة على أصولها!</h1>
-        <p>شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك المعتمد لكل أعمال الصيانة والتشطيبات. فريق احترافي جاهز لخدمتك على مدار الساعة.</p>
-        <a href="https://wa.me/97466608077" class="btn-whatsapp" target="_blank">🟢 اطلب معاينة فورية عبر واتساب</a>
+        <h1 id="heroTitle">صيانة مبانى ومقاولات عامة في قطر.. بسرعة ودقة على أصولها!</h1>
+        <p id="heroDesc">شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك المعتمد لكل أعمال الصيانة والتشطيبات. فريق احترافي جاهز لخدمتك على مدار الساعة.</p>
+        <a href="https://wa.me/97466608077" class="btn-whatsapp" target="_blank" id="whatsappBtn">🟢 اطلب معاينة فورية عبر واتساب</a>
     </section>
 
     <!-- قسم الخدمات -->
     <section class="services">
-        <h2>خدماتنا الاحترافية</h2>
-        <p class="section-subtitle">نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة</p>
+        <h2 id="servicesHeading">خدماتنا الاحترافية</h2>
+        <p class="section-subtitle" id="servicesSub">نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة</p>
         <div class="services-grid">
             <div class="service-card">
-                <h3>صيانة المباني العامة</h3>
-                <p>حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.</p>
+                <h3 id="srv1Title">صيانة المباني العامة</h3>
+                <p id="srv1Desc">حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.</p>
             </div>
             <div class="service-card">
-                <h3>صيانة السباكة والصحي</h3>
-                <p>كشف التسربات، التمديدات، وصيانة الأدوات الصحية.</p>
+                <h3 id="srv2Title">صيانة السباكة والصحي</h3>
+                <p id="srv2Desc">كشف التسربات، التمديدات، وصيانة الأدوات الصحية.</p>
             </div>
             <div class="service-card">
-                <h3>الكهرباء والإضاءة</h3>
-                <p>تمديدات آمنة ومعالجة الأعطال المفاجئة في الحال.</p>
+                <h3 id="srv3Title">الكهرباء والإضاءة</h3>
+                <p id="srv3Desc">تمديدات آمنة ومعالجة الأعطال المفاجئة في الحال.</p>
             </div>
             <div class="service-card">
-                <h3>التكييف والتبريد</h3>
-                <p>صيانة وفك وتركيب وحدات التكييف بكفاءة عالية.</p>
+                <h3 id="srv4Title">التكييف والتبريد</h3>
+                <p id="srv4Desc">صيانة وفك وتركيب وحدات التكييف بكفاءة عالية.</p>
             </div>
         </div>
     </section>
 
     <!-- الفوتر -->
     <footer>
-        <p class="footer-info">📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com</p>
-        <p style="margin-top: 15px; color: #9ca3af; font-size: 13px;">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
+        <p class="footer-info" id="footerInfo">📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com</p>
+        <p style="margin-top: 15px; color: #9ca3af; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
     </footer>
+
+    <!-- سكربت تغيير اللغات الديناميكي -->
+    <script>
+        const translations = {
+            ar: {
+                dir: "rtl",
+                title: "Tic Tac للتجارة والمقاولات | صيانة ومقاولات عامة في قطر",
+                brandName: "Tic Tac للتجارة والمقاولات",
+                heroTitle: "صيانة مبانى ومقاولات عامة في قطر.. بسرعة ودقة على أصولها!",
+                heroDesc: "شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك المعتمد لكل أعمال الصيانة والتشطيبات. فريق احترافي جاهز لخدمتك على مدار الساعة.",
+                whatsappBtn: "🟢 اطلب معاينة فورية عبر واتساب",
+                servicesHeading: "خدماتنا الاحترافية",
+                servicesSub: "نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة",
+                srv1Title: "صيانة المباني العامة",
+                srv1Desc: "حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.",
+                srv2Title: "صيانة السباكة والصحي",
+                srv2Desc: "كشف التسربات، التمديدات، وصيانة الأدوات الصحية.",
+                srv3Title: "الكهرباء والإضاءة",
+                srv3Desc: "تمديدات آمنة ومعالجة الأعطال المفاجئة في الحال.",
+                srv4Title: "التكييف والتبريد",
+                srv4Desc: "صيانة وفك وتركيب وحدات التكييف بكفاءة عالية.",
+                footerInfo: "📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com",
+                footerCopy: "جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026"
+            },
+            en: {
+                dir: "ltr",
+                title: "Tic Tac Trading & Contracting | General Maintenance in Qatar",
+                brandName: "Tic Tac Trading & Contracting",
+                heroTitle: "General Maintenance & Contracting in Qatar.. Fast & Reliable!",
+                heroDesc: "<strong>Tic Tac Trading & Contracting</strong> is your trusted partner for maintenance and fit-out solutions. Professional team ready 24/7.",
+                whatsappBtn: "🟢 Request Instant Inspection via WhatsApp",
+                servicesHeading: "Our Professional Services",
+                servicesSub: "Providing integrated solutions with the highest standards of quality",
+                srv1Title: "General Building Maintenance",
+                srv1Desc: "Comprehensive solutions for daily maintenance with high efficiency.",
+                srv2Title: "Plumbing & Sanitary",
+                srv2Desc: "Leak detection, piping, and sanitary fixture maintenance.",
+                srv3Title: "Electrical & Lighting",
+                srv3Desc: "Safe wiring and immediate troubleshooting for electrical faults.",
+                srv4Title: "Air Conditioning",
+                srv4Desc: "Maintenance, installation, and servicing of AC units efficiently.",
+                footerInfo: "📍 State of Qatar | 📱 Phone / WhatsApp: 66608077 | ✉️ tictac.qatar@gmail.com",
+                footerCopy: "All Rights Reserved to Tic Tac Trading & Contracting © 2026"
+            },
+            ur: {
+                dir: "ltr",
+                title: "Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ | قطر میں جنرل مینٹیننس",
+                brandName: "Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ",
+                heroTitle: "قطر میں جنرل مینٹیننس اور کنٹریکٹنگ.. تیز اور قابل اعتماد!",
+                heroDesc: "<strong>Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ</strong> مرمت اور تعمیراتی کاموں کے لیے آپ کا قابل اعتماد پارٹنر ہے۔",
+                whatsappBtn: "🟢 واٹس ایپ کے ذریعے فوری انسپكشن طلب کریں",
+                servicesHeading: "ہماری پیشہ ورانہ خدمات",
+                servicesSub: "معیار کے اعلیٰ ترین معیار کے ساتھ جامع حل فراہم کرنا",
+                srv1Title: "عمارت کی دیکھ بھال",
+                srv1Desc: "روزمرہ کے تمام مسائل کے لیے جامع اور تیز ترین حل۔",
+                srv2Title: "پلمبنگ اور سینیٹری",
+                srv2Desc: "لیکج کا پتہ لگانا، پائپنگ اور سینیٹری کی دیکھ بھال۔",
+                srv3Title: "بجلی اور لائٹنگ",
+                srv3Desc: "محفوظ وائرنگ اور بجلی کے فالٹس کا فوری ازالہ۔",
+                srv4Title: "ایئر کنڈیشنگ (AC)",
+                srv4Desc: "اے سی یونٹس کی دیکھ بھال، تنصیب اور سروسنگ۔",
+                footerInfo: "📍 قطر | 📱 فون / واٹس ایپ: 66608077 | ✉️ tictac.qatar@gmail.com",
+                footerCopy: "جملہ حقوق محفوظ ہیں Tic Tac © 2026"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('htmlTag').setAttribute('lang', lang);
+            document.getElementById('htmlTag').setAttribute('dir', t.dir);
+            document.getElementById('pageTitle').innerText = t.title;
+            document.getElementById('brandName').innerText = t.brandName;
+            document.getElementById('heroTitle').innerText = t.heroTitle;
+            document.getElementById('heroDesc').innerHTML = t.heroDesc;
+            document.getElementById('whatsappBtn').innerText = t.whatsappBtn;
+            document.getElementById('servicesHeading').innerText = t.servicesHeading;
+            document.getElementById('servicesSub').innerText = t.servicesSub;
+            document.getElementById('srv1Title').innerText = t.srv1Title;
+            document.getElementById('srv1Desc').innerText = t.srv1Desc;
+            document.getElementById('srv2Title').innerText = t.srv2Title;
+            document.getElementById('srv2Desc').innerText.innerText = t.srv2Desc;
+            document.getElementById('srv2Desc').innerText = t.srv2Desc;
+            document.getElementById('srv3Title').innerText = t.srv3Title;
+            document.getElementById('srv3Desc').innerText = t.srv3Desc;
+            document.getElementById('srv4Title').innerText = t.srv4Title;
+            document.getElementById('srv4Desc').innerText = t.srv4Desc;
+            document.getElementById('footerInfo').innerText = t.footerInfo;
+            document.getElementById('footerCopy').innerText = t.footerCopy;
+        }
+    </script>
 
 </body>
 </html>
