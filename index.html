@@ -4,40 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Tic Tac للتجارة والمقاولات | صيانة ومقاولات عامة في قطر</title>
+    <!-- استدعاء خط لوسيل (Lusail Font) من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #101e38;
-            --secondary: #1a2b4c;
-            --accent: #b87333;
+            --primary: #0b1c3c;
+            --secondary: #162a4f;
+            --accent: #c59b27; /* لون ذهبي قطري فاخر متناسق مع اللوجو */
             --whatsapp: #25D366;
-            --light: #f4f6f9;
-            --text: #333333;
+            --whatsapp-hover: #1ebd59;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', 'Lusail', sans-serif; /* اعتماد خط لوسيل والخطوط الرسمية */
         }
 
         body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.7;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* الهيدر الاحترافي */
+        /* الهيدر الفخم */
         header {
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            padding: 15px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 2px solid rgba(197, 155, 39, 0.15);
         }
 
         .logo-container {
@@ -47,14 +55,13 @@
         }
 
         .logo-container img {
-            height: 45px;
-            max-width: 150px;
+            height: 55px;
             object-fit: contain;
         }
 
         .logo-title {
-            font-size: 18px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: 900;
             color: var(--primary);
             letter-spacing: -0.5px;
         }
@@ -65,14 +72,13 @@
             gap: 15px;
         }
 
-        /* قائمة اختيار اللغات */
         .lang-select {
-            background: #f1f3f5;
-            border: 1px solid #ced4da;
-            padding: 6px 12px;
-            border-radius: 8px;
+            background: #f1f5f9;
+            border: 1.5px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 12px;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 700;
             color: var(--primary);
             cursor: pointer;
             outline: none;
@@ -80,58 +86,75 @@
         }
 
         .lang-select:hover {
-            background: #e2e6ea;
+            border-color: var(--accent);
+            background: #fff;
         }
 
         .header-contact {
             display: flex;
             align-items: center;
-            gap: 8px;
-            background: #e8f5e9;
-            padding: 8px 16px;
+            gap: 10px;
+            background: #e8f8ec;
+            padding: 9px 20px;
             border-radius: 50px;
             text-decoration: none;
             color: var(--whatsapp);
-            font-weight: bold;
+            font-weight: 800;
             font-size: 15px;
+            border: 1.5px solid #c8e6c9;
             transition: 0.3s;
         }
 
         .header-contact:hover {
-            background: #c8e6c9;
+            background: var(--whatsapp);
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
-        /* واجهة الـ Hero */
+        /* واجهة الـ Hero الاحترافية */
         .hero {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #071328 0%, #102347 100%);
             color: white;
             text-align: center;
-            padding: 90px 20px;
+            padding: 120px 20px 100px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::after {
+        .hero::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(197, 155, 39, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(197, 155, 39, 0.15);
+            color: var(--accent);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            border: 1px solid rgba(197, 155, 39, 0.3);
         }
 
         .hero h1 {
-            font-size: 38px;
-            margin-bottom: 20px;
-            font-weight: 800;
+            font-size: 44px;
+            margin-bottom: 25px;
+            font-weight: 900;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
         }
 
         .hero p {
-            font-size: 18px;
-            margin-bottom: 35px;
-            color: #d1d5db;
-            max-width: 700px;
+            font-size: 19px;
+            margin-bottom: 40px;
+            color: #94a3b8;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -139,98 +162,134 @@
         .btn-whatsapp {
             background-color: var(--whatsapp);
             color: white;
-            padding: 16px 35px;
+            padding: 18px 40px;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 800;
             border: none;
-            border-radius: 10px;
+            border-radius: 14px;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s, background-color 0.2s;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+            transition: all 0.3s ease;
         }
 
         .btn-whatsapp:hover {
-            background-color: #1ebd59;
-            transform: translateY(-2px);
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
         }
 
-        /* قسم الخدمات */
+        /* قسم الخدمات المميز */
         .services {
-            padding: 70px 20px;
-            max-width: 1200px;
+            padding: 90px 20px;
+            max-width: 1250px;
             margin: auto;
             text-align: center;
         }
 
+        .section-header {
+            margin-bottom: 60px;
+        }
+
         .services h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
+            font-size: 36px;
+            margin-bottom: 12px;
             color: var(--primary);
-            font-weight: 800;
+            font-weight: 900;
         }
 
         .section-subtitle {
-            color: #6b7280;
-            margin-bottom: 50px;
-            font-size: 16px;
+            color: var(--text-muted);
+            font-size: 17px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border-top: 4px solid var(--primary);
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
             text-align: inherit;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--accent);
+            opacity: 0;
+            transition: 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-top-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 28, 60, 0.08);
+            border-color: transparent;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #f8fafc;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 22px;
+            border: 1px solid #e2e8f0;
         }
 
         .service-card h3 {
             margin-bottom: 15px;
             color: var(--primary);
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 800;
         }
 
         .service-card p {
-            color: #666;
+            color: var(--text-muted);
             font-size: 15px;
+            line-height: 1.7;
         }
 
-        /* الفوتر */
+        /* الفوتر الفخم */
         footer {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-top: 3px solid var(--accent);
+            padding: 50px 20px;
+            margin-top: 80px;
+            border-top: 4px solid var(--accent);
         }
 
         footer p {
             font-size: 15px;
-            color: #d1d5db;
+            color: #94a3b8;
         }
 
         .footer-info {
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #fff;
+            font-size: 17px;
         }
 
         /* التجاوب مع الجوال */
@@ -240,8 +299,11 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            .hero {
+                padding: 80px 20px 60px;
+            }
             .hero h1 {
-                font-size: 26px;
+                font-size: 30px;
             }
             .hero p {
                 font-size: 16px;
@@ -261,7 +323,6 @@
             <div class="logo-title" id="brandName">Tic Tac للتجارة والمقاولات</div>
         </div>
         <div class="header-actions">
-            <!-- قائمة تغيير اللغات -->
             <select id="languageSelect" class="lang-select" onchange="changeLanguage(this.value)">
                 <option value="ar">العربية 🇸🇦</option>
                 <option value="en">English 🇬🇧</option>
@@ -275,6 +336,7 @@
 
     <!-- الواجهة الرئيسية -->
     <section class="hero">
+        <div class="hero-badge" id="heroBadge">✨ رواد الصيانة والمقاولات في دولة قطر</div>
         <h1 id="heroTitle">صيانة مبانى ومقاولات عامة في قطر.. بسرعة ودقة على أصولها!</h1>
         <p id="heroDesc">شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك المعتمد لكل أعمال الصيانة والتشطيبات. فريق احترافي جاهز لخدمتك على مدار الساعة.</p>
         <a href="https://wa.me/97466608077" class="btn-whatsapp" target="_blank" id="whatsappBtn">🟢 اطلب معاينة فورية عبر واتساب</a>
@@ -282,22 +344,28 @@
 
     <!-- قسم الخدمات -->
     <section class="services">
-        <h2 id="servicesHeading">خدماتنا الاحترافية</h2>
-        <p class="section-subtitle" id="servicesSub">نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة</p>
+        <div class="section-header">
+            <h2 id="servicesHeading">خدماتنا الاحترافية</h2>
+            <p class="section-subtitle" id="servicesSub">نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة الهندسية</p>
+        </div>
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon">🏢</div>
                 <h3 id="srv1Title">صيانة المباني العامة</h3>
                 <p id="srv1Desc">حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon">🔧</div>
                 <h3 id="srv2Title">صيانة السباكة والصحي</h3>
                 <p id="srv2Desc">كشف التسربات، التمديدات، وصيانة الأدوات الصحية.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon">⚡</div>
                 <h3 id="srv3Title">الكهرباء والإضاءة</h3>
                 <p id="srv3Desc">تمديدات آمنة ومعالجة الأعطال المفاجئة في الحال.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon">❄️</div>
                 <h3 id="srv4Title">التكييف والتبريد</h3>
                 <p id="srv4Desc">صيانة وفك وتركيب وحدات التكييف بكفاءة عالية.</p>
             </div>
@@ -307,21 +375,22 @@
     <!-- الفوتر -->
     <footer>
         <p class="footer-info" id="footerInfo">📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com</p>
-        <p style="margin-top: 15px; color: #9ca3af; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
+        <p style="margin-top: 15px; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
     </footer>
 
-    <!-- سكربت تغيير اللغات الديناميكي -->
+    <!-- سكربت تغيير اللغات -->
     <script>
         const translations = {
             ar: {
                 dir: "rtl",
                 title: "Tic Tac للتجارة والمقاولات | صيانة ومقاولات عامة في قطر",
                 brandName: "Tic Tac للتجارة والمقاولات",
+                heroBadge: "✨ رواد الصيانة والمقاولات في دولة قطر",
                 heroTitle: "صيانة مبانى ومقاولات عامة في قطر.. بسرعة ودقة على أصولها!",
                 heroDesc: "شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك المعتمد لكل أعمال الصيانة والتشطيبات. فريق احترافي جاهز لخدمتك على مدار الساعة.",
                 whatsappBtn: "🟢 اطلب معاينة فورية عبر واتساب",
                 servicesHeading: "خدماتنا الاحترافية",
-                servicesSub: "نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة",
+                servicesSub: "نقدم حلولاً متكاملة بأعلى معايير الجودة والكفاءة الهندسية",
                 srv1Title: "صيانة المباني العامة",
                 srv1Desc: "حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.",
                 srv2Title: "صيانة السباكة والصحي",
@@ -337,11 +406,12 @@
                 dir: "ltr",
                 title: "Tic Tac Trading & Contracting | General Maintenance in Qatar",
                 brandName: "Tic Tac Trading & Contracting",
+                heroBadge: "✨ Leaders in Maintenance & Contracting in Qatar",
                 heroTitle: "General Maintenance & Contracting in Qatar.. Fast & Reliable!",
                 heroDesc: "<strong>Tic Tac Trading & Contracting</strong> is your trusted partner for maintenance and fit-out solutions. Professional team ready 24/7.",
                 whatsappBtn: "🟢 Request Instant Inspection via WhatsApp",
                 servicesHeading: "Our Professional Services",
-                servicesSub: "Providing integrated solutions with the highest standards of quality",
+                servicesSub: "Providing integrated solutions with the highest engineering standards",
                 srv1Title: "General Building Maintenance",
                 srv1Desc: "Comprehensive solutions for daily maintenance with high efficiency.",
                 srv2Title: "Plumbing & Sanitary",
@@ -357,11 +427,12 @@
                 dir: "ltr",
                 title: "Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ | قطر میں جنرل مینٹیننس",
                 brandName: "Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ",
+                heroBadge: "✨ قطر میں دیکھ بھال اور تعمیرات کے پیش پیش",
                 heroTitle: "قطر میں جنرل مینٹیننس اور کنٹریکٹنگ.. تیز اور قابل اعتماد!",
                 heroDesc: "<strong>Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ</strong> مرمت اور تعمیراتی کاموں کے لیے آپ کا قابل اعتماد پارٹنر ہے۔",
                 whatsappBtn: "🟢 واٹس ایپ کے ذریعے فوری انسپكشن طلب کریں",
                 servicesHeading: "ہماری پیشہ ورانہ خدمات",
-                servicesSub: "معیار کے اعلیٰ ترین معیار کے ساتھ جامع حل فراہم کرنا",
+                servicesSub: "معیار اور مہارت کے اعلیٰ ترین معیار کے ساتھ جامع حل",
                 srv1Title: "عمارت کی دیکھ بھال",
                 srv1Desc: "روزمرہ کے تمام مسائل کے لیے جامع اور تیز ترین حل۔",
                 srv2Title: "پلمبنگ اور سینیٹری",
@@ -381,6 +452,7 @@
             document.getElementById('htmlTag').setAttribute('dir', t.dir);
             document.getElementById('pageTitle').innerText = t.title;
             document.getElementById('brandName').innerText = t.brandName;
+            document.getElementById('heroBadge').innerText = t.heroBadge;
             document.getElementById('heroTitle').innerText = t.heroTitle;
             document.getElementById('heroDesc').innerHTML = t.heroDesc;
             document.getElementById('whatsappBtn').innerText = t.whatsappBtn;
@@ -389,7 +461,6 @@
             document.getElementById('srv1Title').innerText = t.srv1Title;
             document.getElementById('srv1Desc').innerText = t.srv1Desc;
             document.getElementById('srv2Title').innerText = t.srv2Title;
-            document.getElementById('srv2Desc').innerText.innerText = t.srv2Desc;
             document.getElementById('srv2Desc').innerText = t.srv2Desc;
             document.getElementById('srv3Title').innerText = t.srv3Title;
             document.getElementById('srv3Desc').innerText = t.srv3Desc;
