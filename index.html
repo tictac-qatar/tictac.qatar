@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Tic Tac للتجارة والمقاولات | مقاولات عامة وصيانة في قطر</title>
+    <title id="pageTitle">Tic Tac for Building Maintenance | صيانة المباني في قطر</title>
     <!-- خطوط عربية عالية الأناقة -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-body: #f8fafc;
             --primary-dark: #0f172a;
-            --primary-color: #1e293b;
             --card-bg: #ffffff;
             --accent-gold: #b8860b;
             --whatsapp: #25D366;
-            --whatsapp-hover: #1ebd59;
+            --call-color: #0284c7;
             --text-main: #334155;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
@@ -34,12 +33,12 @@
             overflow-x: hidden;
         }
 
-        /* الهيدر الأبيض العصري والنظيف */
+        /* الهيدر العصري الفخم */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            padding: 16px 50px;
+            padding: 16px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,16 +51,18 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-container img {
-            height: 48px;
+            height: 45px;
+            width: auto;
             object-fit: contain;
+            border-radius: 6px;
         }
 
         .logo-title {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 900;
             color: var(--primary-dark);
             letter-spacing: -0.5px;
@@ -70,13 +71,13 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .lang-select {
             background: #f1f5f9;
             border: 1px solid var(--border-color);
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 10px;
             font-size: 14px;
             font-weight: 700;
@@ -86,38 +87,55 @@
             transition: 0.3s;
         }
 
-        .lang-select:hover, .lang-select:focus {
-            background: #e2e8f0;
+        .lang-select:hover {
             border-color: var(--accent-gold);
         }
 
-        .header-contact {
+        /* أزرار التواصل في الهيدر */
+        .contact-btns {
             display: flex;
-            align-items: center;
             gap: 8px;
-            background: #f0fdf4;
-            padding: 8px 18px;
+        }
+
+        .btn-header-wa, .btn-header-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
             border-radius: 50px;
             text-decoration: none;
-            color: var(--whatsapp);
             font-weight: 800;
-            font-size: 14px;
-            border: 1px solid #bbf7d0;
+            font-size: 13px;
             transition: 0.3s;
         }
 
-        .header-contact:hover {
-            background: var(--whatsapp);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        .btn-header-wa {
+            background: #f0fdf4;
+            color: var(--whatsapp);
+            border: 1px solid #bbf7d0;
         }
 
-        /* واجهة الـ Hero الفخمة بخلفية بيضاء وبتدرجات راقية */
+        .btn-header-wa:hover {
+            background: var(--whatsapp);
+            color: #fff;
+        }
+
+        .btn-header-call {
+            background: #f0f9ff;
+            color: var(--call-color);
+            border: 1px solid #bae6fd;
+        }
+
+        .btn-header-call:hover {
+            background: var(--call-color);
+            color: #fff;
+        }
+
+        /* الواجهة الرئيسية Hero */
         .hero {
             background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             text-align: center;
-            padding: 120px 20px 90px;
-            position: relative;
+            padding: 110px 20px 80px;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -127,7 +145,7 @@
             gap: 8px;
             background: #fef3c7;
             color: #92400e;
-            padding: 6px 20px;
+            padding: 6px 18px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 700;
@@ -136,7 +154,7 @@
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 40px;
             margin-bottom: 20px;
             font-weight: 900;
             max-width: 900px;
@@ -151,51 +169,70 @@
         }
 
         .hero p {
-            font-size: 18px;
-            margin-bottom: 40px;
+            font-size: 17px;
+            margin-bottom: 35px;
             color: var(--text-muted);
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 16px 38px;
-            font-size: 18px;
+        /* أزرار التواصل الكبيرة في الواجهة */
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main-whatsapp, .btn-main-call {
+            padding: 15px 30px;
+            font-size: 16px;
             font-weight: 800;
-            border: none;
             border-radius: 12px;
-            cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            gap: 10px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .btn-whatsapp:hover {
+        .btn-main-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .btn-main-whatsapp:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
         }
 
-        /* قسم الخدمات النظيف والأنيق */
+        .btn-main-call {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+        }
+
+        .btn-main-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35);
+        }
+
+        /* قسم الخدمات */
         .services {
-            padding: 90px 20px;
-            max-width: 1250px;
+            padding: 80px 20px;
+            max-width: 1200px;
             margin: auto;
             text-align: center;
         }
 
         .section-header {
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         .services h2 {
-            font-size: 36px;
-            margin-bottom: 12px;
+            font-size: 34px;
+            margin-bottom: 10px;
             font-weight: 900;
             color: var(--primary-dark);
         }
@@ -207,42 +244,41 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
         .service-card {
             background: var(--card-bg);
-            padding: 40px 25px;
+            padding: 35px 25px;
             border-radius: 16px;
             border: 1px solid var(--border-color);
             text-align: inherit;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: var(--accent-gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background: #f8fafc;
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
+            font-size: 24px;
             margin-bottom: 20px;
             border: 1px solid var(--border-color);
         }
 
         .service-card h3 {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--primary-dark);
             font-size: 20px;
             font-weight: 800;
@@ -250,26 +286,26 @@
 
         .service-card p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.7;
         }
 
-        /* الفوتر الفاخر والنظيف */
+        /* الفوتر */
         footer {
             background: var(--primary-dark);
             color: white;
             text-align: center;
-            padding: 45px 20px;
-            margin-top: 80px;
+            padding: 40px 20px;
+            margin-top: 70px;
         }
 
         footer p {
-            font-size: 15px;
+            font-size: 14px;
             color: #94a3b8;
         }
 
         .footer-info {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
             color: #fff;
             font-size: 16px;
@@ -278,21 +314,29 @@
         /* التجاوب مع الجوال */
         @media (max-width: 768px) {
             header {
-                padding: 12px 20px;
+                padding: 12px 15px;
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
             }
             .hero {
-                padding: 80px 20px 60px;
+                padding: 70px 15px 50px;
             }
             .hero h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
             .hero p {
-                font-size: 15px;
+                font-size: 14px;
             }
             .logo-title {
-                font-size: 17px;
+                font-size: 16px;
+            }
+            .hero-cta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn-main-whatsapp, .btn-main-call {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -302,9 +346,8 @@
     <!-- الهيدر -->
     <header>
         <div class="logo-container">
-            <!-- ربط اللوجو بملف logo.svg الموجود عندك في المستودع -->
-<img src="IMG_7425.jpeg" alt="Tic Tac Logo" onerror="this.style.display='none'">
-            <div class="logo-title" id="brandName">Tic Tac للتجارة والمقاولات</div>
+            <img src="IMG_7425.jpeg" alt="Tic Tac Logo" onerror="this.style.display='none'">
+            <div class="logo-title" id="brandName">Tic Tac for Building Maintenance</div>
         </div>
         <div class="header-actions">
             <select id="languageSelect" class="lang-select" onchange="changeLanguage(this.value)">
@@ -312,18 +355,26 @@
                 <option value="en">English 🇬🇧</option>
                 <option value="ur">اردو 🇵🇰</option>
             </select>
-            <a href="https://wa.me/97466608077" target="_blank" class="header-contact">
-                <span>💬 66608077</span>
-            </a>
+            <div class="contact-btns">
+                <a href="https://wa.me/97466608077" target="_blank" class="btn-header-wa">
+                    <span>💬 واتساب</span>
+                </a>
+                <a href="tel:+97466608077" class="btn-header-call">
+                    <span>📞 اتصال</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- الواجهة الرئيسية -->
     <section class="hero">
-        <div class="hero-badge" id="heroBadge">✨ رواد المقاولات العامة والصيانة في دولة قطر</div>
-        <h1 id="heroTitle"><span>مقاولات عامة وصيانة</span> مبانى متكاملة في قطر.. بسرعة ودقة على أصولها!</h1>
-        <p id="heroDesc">شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك الهندسي المعتمد لكل أعمال المقاولات، البناء، والصيانة والتشطيبات. فريق احترافي جاهز لخدمتك بأعلى المعايير.</p>
-        <a href="https://wa.me/97466608077" class="btn-whatsapp" target="_blank" id="whatsappBtn">🟢 اطلب معاينة فورية عبر واتساب</a>
+        <div class="hero-badge" id="heroBadge">✨ رواد صيانة المباني في دولة قطر</div>
+        <h1 id="heroTitle"><span>صيانة المباني</span> والخدمات المتكاملة في قطر.. بسرعة ودقة على أصولها!</h1>
+        <p id="heroDesc">شركة <strong>Tic Tac for Building Maintenance</strong> شريكك الهندسي المعتمد لكل أعمال الصيانة، التشطيبات، والخدمات الفنية. فريق احترافي جاهز لخدمتك بأعلى المعايير.</p>
+        <div class="hero-cta">
+            <a href="https://wa.me/97466608077" class="btn-main-whatsapp" target="_blank" id="whatsappBtn">💬 راسلنا عبر واتساب</a>
+            <a href="tel:+97466608077" class="btn-main-call" id="callBtn">📞 اتصال مباشر الآن</a>
+        </div>
     </section>
 
     <!-- قسم الخدمات -->
@@ -334,24 +385,24 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🏗️</div>
-                <h3 id="srv1Title">المقاولات العامة والبناء</h3>
-                <p id="srv1Desc">تنفيذ المشاريع الإنشائية، التوسعات، والتشطيبات المعمارية الشاملة.</p>
-            </div>
-            <div class="service-card">
                 <div class="service-icon">🏢</div>
-                <h3 id="srv2Title">صيانة المباني العامة</h3>
-                <p id="srv2Desc">حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.</p>
+                <h3 id="srv1Title">صيانة المباني الشاملة</h3>
+                <p id="srv1Desc">حلول شاملة لكل الأعطال اليومية والمؤسسية بسرعة وكفاءة عالية.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔧</div>
-                <h3 id="srv3Title">السباكة والأدوات الصحية</h3>
-                <p id="srv3Desc">كشف التسربات، التمديدات، وصيانة الشبكات الصحية بدقة.</p>
+                <h3 id="srv2Title">السباكة والأدوات الصحية</h3>
+                <p id="srv2Desc">كشف التسربات، التمديدات، وصيانة الشبكات الصحية بدقة.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚡</div>
-                <h3 id="srv4Title">الكهرباء والإضاءة</h3>
-                <p id="srv4Desc">تمديدات آمنة، لوحات التحكم، ومعالجة الأعطال المفاجئة.</p>
+                <h3 id="srv3Title">الكهرباء والإضاءة</h3>
+                <p id="srv3Desc">تمديدات آمنة، لوحات التحكم، ومعالجة الأعطال المفاجئة.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3 id="srv4Title">التشطيبات والديكورات</h3>
+                <p id="srv4Desc">أعمال الصيانة الدورية، الدهانات، والتطوير المعماري الداخلي.</p>
             </div>
         </div>
     </section>
@@ -359,74 +410,77 @@
     <!-- الفوتر -->
     <footer>
         <p class="footer-info" id="footerInfo">📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com</p>
-        <p style="margin-top: 10px; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026</p>
+        <p style="margin-top: 8px; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac for Building Maintenance © 2026</p>
     </footer>
 
-    <!-- سكربت تغيير اللغات الديناميكي -->
+    <!-- سكربت اللغات -->
     <script>
         const translations = {
             ar: {
                 dir: "rtl",
-                title: "Tic Tac للتجارة والمقاولات | مقاولات عامة وصيانة في قطر",
-                brandName: "Tic Tac للتجارة والمقاولات",
-                heroBadge: "✨ رواد المقاولات العامة والصيانة في دولة قطر",
-                heroTitle: "<span>مقاولات عامة وصيانة</span> مبانى متكاملة في قطر.. بسرعة ودقة على أصولها!",
-                heroDesc: "شركة <strong>Tic Tac للتجارة والمقاولات</strong> شريكك الهندسي المعتمد لكل أعمال المقاولات، البناء، والصيانة والتشطيبات. فريق احترافي جاهز لخدمتك بأعلى المعايير.",
-                whatsappBtn: "🟢 اطلب معاينة فورية عبر واتساب",
+                title: "Tic Tac for Building Maintenance | صيانة المباني في قطر",
+                brandName: "Tic Tac for Building Maintenance",
+                heroBadge: "✨ رواد صيانة المباني في دولة قطر",
+                heroTitle: "<span>صيانة المباني</span> والخدمات المتكاملة في قطر.. بسرعة ودقة على أصولها!",
+                heroDesc: "شركة <strong>Tic Tac for Building Maintenance</strong> شريكك الهندسي المعتمد لكل أعمال الصيانة، التشطيبات، والخدمات الفنية. فريق احترافي جاهز لخدمتك بأعلى المعايير.",
+                whatsappBtn: "💬 راسلنا عبر واتساب",
+                callBtn: "📞 اتصال مباشر الآن",
                 servicesHeading: "خدماتنا الاحترافية",
                 servicesSub: "نقدم حلولاً هندسية متكاملة بأعلى معايير الجودة والكفاءة المعتمدة",
-                srv1Title: "المقاولات العامة والبناء",
-                srv1Desc: "تنفيذ المشاريع الإنشائية، التوسعات، والتشطيبات المعمارية الشاملة.",
-                srv2Title: "صيانة المباني العامة",
-                srv2Desc: "حلول شاملة لكل الأعطال اليومية بسرعة وكفاءة عالية.",
-                srv3Title: "السباكة والأدوات الصحية",
-                srv3Desc: "كشف التسربات، التمديدات، وصيانة الشبكات الصحية بدقة.",
-                srv4Title: "الكهرباء والإضاءة",
-                srv4Desc: "تمديدات آمنة، لوحات التحكم، ومعالجة الأعطال المفاجئة.",
+                srv1Title: "صيانة المباني الشاملة",
+                srv1Desc: "حلول شاملة لكل الأعطال اليومية والمؤسسية بسرعة وكفاءة عالية.",
+                srv2Title: "السباكة والأدوات الصحية",
+                srv2Desc: "كشف التسربات، التمديدات، وصيانة الشبكات الصحية بدقة.",
+                srv3Title: "الكهرباء والإضاءة",
+                srv3Desc: "تمديدات آمنة، لوحات التحكم، ومعالجة الأعطال المفاجئة.",
+                srv4Title: "التشطيبات والديكورات",
+                srv4Desc: "أعمال الصيانة الدورية، الدهانات، والتطوير المعماري الداخلي.",
                 footerInfo: "📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com",
-                footerCopy: "جميع الحقوق محفوظة لشركة Tic Tac للتجارة والمقاولات © 2026"
+                footerCopy: "جميع الحقوق محفوظة لشركة Tic Tac for Building Maintenance © 2026"
             },
             en: {
                 dir: "ltr",
-                title: "Tic Tac Trading & Contracting | General Contracting & Maintenance in Qatar",
-                brandName: "Tic Tac Trading & Contracting",
-                heroBadge: "✨ Leaders in General Contracting & Maintenance in Qatar",
-                heroTitle: "<span>General Contracting & Maintenance</span> in Qatar.. Fast & Reliable!",
-                heroDesc: "<strong>Tic Tac Trading & Contracting</strong> is your trusted engineering partner for construction, fit-outs, and maintenance solutions 24/7.",
-                whatsappBtn: "🟢 Request Instant Inspection via WhatsApp",
+                title: "Tic Tac for Building Maintenance | Building Maintenance in Qatar",
+                brandName: "Tic Tac for Building Maintenance",
+                heroBadge: "✨ Leaders in Building Maintenance in Qatar",
+                heroTitle: "<span>Building Maintenance</span> & Integrated Services in Qatar.. Fast & Reliable!",
+                heroDesc: "<strong>Tic Tac for Building Maintenance</strong> is your trusted engineering partner for building maintenance, fit-outs, and technical solutions 24/7.",
+                whatsappBtn: "💬 Chat on WhatsApp",
+                callBtn: "📞 Call Direct Now",
                 servicesHeading: "Our Professional Services",
                 servicesSub: "Providing integrated engineering solutions with the highest quality standards",
-                srv1Title: "General Contracting & Construction",
-                srv1Desc: "Executing construction projects, expansions, and comprehensive architectural finishes.",
-                srv2Title: "General Building Maintenance",
-                srv2Desc: "Comprehensive solutions for daily maintenance with high efficiency.",
-                srv3Title: "Plumbing & Sanitary",
-                srv3Desc: "Leak detection, piping, and accurate maintenance of sanitary networks.",
-                srv4Title: "Electrical & Lighting",
-                srv4Desc: "Safe wiring, control panels, and immediate troubleshooting.",
+                srv1Title: "Comprehensive Building Maintenance",
+                srv1Desc: "Comprehensive solutions for daily and institutional maintenance with high efficiency.",
+                srv2Title: "Plumbing & Sanitary",
+                srv2Desc: "Leak detection, piping, and accurate maintenance of sanitary networks.",
+                srv3Title: "Electrical & Lighting",
+                srv3Desc: "Safe wiring, control panels, and immediate troubleshooting.",
+                srv4Title: "Finishing & Decor",
+                srv4Desc: "Periodic maintenance, painting, and interior architectural development.",
                 footerInfo: "📍 State of Qatar | 📱 Phone / WhatsApp: 66608077 | ✉️ tictac.qatar@gmail.com",
-                footerCopy: "All Rights Reserved to Tic Tac Trading & Contracting © 2026"
+                footerCopy: "All Rights Reserved to Tic Tac for Building Maintenance © 2026"
             },
             ur: {
                 dir: "ltr",
-                title: "Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ | قطر میں جنرل کنٹریکٹنگ اور مینٹیننس",
-                brandName: "Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ",
-                heroBadge: "✨ قطر میں جنرل کنٹریکٹنگ اور مینٹیننس کے پیش پیش",
-                heroTitle: "<span>جنرل کنٹریکٹنگ اور مینٹیننس</span> قطر میں.. تیز اور قابل اعتماد!",
-                heroDesc: "<strong>Tic Tac ٹریڈنگ اینڈ کنٹریکٹنگ</strong> تعمیرات، مرمت اور تمام سول ورکس کے لیے آپ کا قابل اعتماد پارٹنر ہے۔",
-                whatsappBtn: "🟢 واٹس ایپ کے ذریعے فوری انسپكشن طلب کریں",
+                title: "Tic Tac for Building Maintenance | قطر میں عمارت کی دیکھ بھال",
+                brandName: "Tic Tac for Building Maintenance",
+                heroBadge: "✨ قطر میں عمارت کی دیکھ بھال کے پیش پیش",
+                heroTitle: "<span>بلڈنگ مینٹیننس</span> اور جامع خدمات قطر میں.. تیز اور قابل اعتماد!",
+                heroDesc: "<strong>Tic Tac for Building Maintenance</strong> عمارت کی دیکھ بھال، مرمت اور تکنیکی حل کے لیے آپ کا قابل اعتماد پارٹنر ہے۔",
+                whatsappBtn: "💬 واٹس ایپ پر بات کریں",
+                callBtn: "📞 ابھی کال کریں",
                 servicesHeading: "ہماری پیشہ ورانہ خدمات",
                 servicesSub: "اعلیٰ ترین معیار کے ساتھ جامع انجینئرنگ حل فراہم کرنا",
-                srv1Title: "جنرل کنٹریکٹنگ اور تعمیرات",
-                srv1Desc: "تعمیراتی منصوبوں، توسیع اور آرکیটেکل فنشنگ کا بہترین نفاذ۔",
-                srv2Title: "عمارت کی دیکھ بھال",
-                srv2Desc: "روزمرہ کے تمام مسائل کے لیے جامع اور تیز ترین حل۔",
-                srv3Title: "پلمبنگ اور سینیٹری",
-                srv3Desc: "لیکج کا پتہ لگانا، پائپنگ اور سینیٹری نیٹ ورک کی دیکھ بھال۔",
-                srv4Title: "بجلی اور لائٹنگ",
-                srv4Desc: "محفوظ وائرنگ، کنٹرول پینلز اور فوری فالت ٹربل شوٹنگ۔",
+                srv1Title: "جامع عمارت کی دیکھ بھال",
+                srv1Desc: "روزمرہ کے مسائل کے لیے جامع اور تیز ترین حل۔",
+                srv2Title: "پلمبنگ اور سینیٹری",
+                srv2Desc: "لیکج کا پتہ لگانا، پائپنگ اور سینیٹری نیٹ ورک کی دیکھ بھال۔",
+                srv3Title: "بجلی اور لائٹنگ",
+                srv3Desc: "محفوظ وائرنگ، کنٹرول پینلز اور فوری فالت ٹربل شوٹنگ۔",
+                srv4Title: "فنشنگ اور سجاوٹ",
+                srv4Desc: "باقاعدہ دیکھ بھال، پینٹنگ اور اندرونی آرکیٹেকচারل ترقی۔",
                 footerInfo: "📍 قطر | 📱 فون / واٹس ایپ: 66608077 | ✉️ tictac.qatar@gmail.com",
-                footerCopy: "جملہ حقوق محفوظ ہیں Tic Tac © 2026"
+                footerCopy: "جملہ حقوق محفوظ ہیں Tic Tac for Building Maintenance © 2026"
             }
         };
 
@@ -440,6 +494,7 @@
             document.getElementById('heroTitle').innerHTML = t.heroTitle;
             document.getElementById('heroDesc').innerHTML = t.heroDesc;
             document.getElementById('whatsappBtn').innerText = t.whatsappBtn;
+            document.getElementById('callBtn').innerText = t.callBtn;
             document.getElementById('servicesHeading').innerText = t.servicesHeading;
             document.getElementById('servicesSub').innerText = t.servicesSub;
             document.getElementById('srv1Title').innerText = t.srv1Title;
