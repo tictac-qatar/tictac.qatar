@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Tic Tac for Building Maintenance | صيانة المباني في قطر</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-body: #faf9f6;
@@ -22,7 +22,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
 
         body {
@@ -64,7 +64,7 @@
 
         .logo-title {
             font-size: 19px;
-            font-weight: 800;
+            font-weight: 900;
             color: var(--primary-dark);
             letter-spacing: -0.5px;
         }
@@ -106,7 +106,7 @@
             padding: 8px 14px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 13px;
             transition: 0.3s;
         }
@@ -156,9 +156,9 @@
         }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 20px;
-            font-weight: 800;
+            font-weight: 900;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
@@ -171,13 +171,12 @@
         }
 
         .hero p {
-            font-size: 16px;
+            font-size: 17px;
             margin-bottom: 35px;
             color: var(--text-muted);
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 500;
         }
 
         /* أزرار التواصل الكبيرة في الواجهة */
@@ -191,7 +190,7 @@
         .btn-main-whatsapp, .btn-main-call {
             padding: 15px 30px;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 800;
             border-radius: 12px;
             text-decoration: none;
             display: inline-flex;
@@ -234,16 +233,15 @@
         }
 
         .services h2 {
-            font-size: 32px;
+            font-size: 34px;
             margin-bottom: 10px;
-            font-weight: 800;
+            font-weight: 900;
             color: var(--primary-dark);
         }
 
         .section-subtitle {
             color: var(--text-muted);
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 16px;
         }
 
         .services-grid {
@@ -284,15 +282,14 @@
         .service-card h3 {
             margin-bottom: 10px;
             color: var(--primary-dark);
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
         }
 
         .service-card p {
             color: var(--text-muted);
             font-size: 14px;
             line-height: 1.7;
-            font-weight: 400;
         }
 
         /* الفوتر */
@@ -350,7 +347,7 @@
 
     <header>
         <div class="logo-container">
-            <img src="logo.svg" alt="Tic Tac Logo" onerror="this.style.display='none'">
+            <img src="IMG_7478.jpeg" alt="Tic Tac Logo" onerror="this.style.display='none'">
             <div class="logo-title" id="brandName">Tic Tac for Building Maintenance</div>
         </div>
         <div class="header-actions">
@@ -389,4 +386,126 @@
             <div class="service-card">
                 <div class="service-icon">🏢</div>
                 <h3 id="srv1Title">صيانة المباني الشاملة</h3>
-                <p id="srv1Desc">حلول شاملة لكل الأعطال اليومية والمؤسس
+                <p id="srv1Desc">حلول شاملة لكل الأعطال اليومية والمؤسسية بسرعة وكفاءة عالية.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3 id="srv2Title">السباكة والأدوات الصحية</h3>
+                <p id="srv2Desc">كشف التسربات، التمديدات، وصيانة الشبكات الصحية بدقة.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3 id="srv3Title">الكهرباء والإضاءة</h3>
+                <p id="srv3Desc">تمديدات آمنة، لوحات التحكم، ومعالجة الأعطال المفاجئة.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3 id="srv4Title">التشطيبات والديكورات</h3>
+                <p id="srv4Desc">أعمال الصيانة الدورية، الدهانات، والتطوير المعماري الداخلي.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-info" id="footerInfo">📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com</p>
+        <p style="margin-top: 8px; font-size: 13px;" id="footerCopy">جميع الحقوق محفوظة لشركة Tic Tac for Building Maintenance © 2026</p>
+    </footer>
+
+    <script>
+        const translations = {
+            ar: {
+                dir: "rtl",
+                title: "Tic Tac for Building Maintenance | صيانة المباني في قطر",
+                brandName: "Tic Tac for Building Maintenance",
+                heroBadge: "✨ رواد صيانة المباني في دولة قطر",
+                heroTitle: "<span>صيانة المباني</span> والخدمات المتكاملة في قطر.. بسرعة ودقة على أصولها!",
+                heroDesc: "شركة <strong>Tic Tac for Building Maintenance</strong> شريكك الهندسي المعتمد لكل أعمال الصيانة، التشطيبات، والخدمات الفنية. فريق احترافي جاهز لخدمتك بأعلى المعايير.",
+                whatsappBtn: "💬 راسلنا عبر واتساب",
+                callBtn: "📞 اتصال مباشر الآن",
+                servicesHeading: "خدماتنا الاحترافية",
+                servicesSub: "نقدم حلولاً هندسية متكاملة بأعلى معايير الجودة والكفاءة المعتمدة",
+                srv1Title: "صيانة المباني الشاملة",
+                srv1Desc: "حلول شاملة لكل الأعطال اليومية والمؤسسية بسرعة وكفاءة عالية.",
+                srv2Title: "السباكة والأدوات الصحية",
+                srv2Desc: "كشف التسربات، التمديدات، وصيانة الشبكات الصحية بدقة.",
+                srv3Title: "الكهرباء والإضاءة",
+                srv3Desc: "تمديدات آمنة، لوحات التحكم، ومعالجة الأعطال المفاجئة.",
+                srv4Title: "التشطيبات والديكورات",
+                srv4Desc: "أعمال الصيانة الدورية، الدهانات، والتطوير المعماري الداخلي.",
+                footerInfo: "📍 دولة قطر | 📱 هاتف / واتساب: 66608077 | ✉️ tictac.qatar@gmail.com",
+                footerCopy: "جميع الحقوق محفوظة لشركة Tic Tac for Building Maintenance © 2026"
+            },
+            en: {
+                dir: "ltr",
+                title: "Tic Tac for Building Maintenance | Building Maintenance in Qatar",
+                brandName: "Tic Tac for Building Maintenance",
+                heroBadge: "✨ Leaders in Building Maintenance in Qatar",
+                heroTitle: "<span>Building Maintenance</span> & Integrated Services in Qatar.. Fast & Reliable!",
+                heroDesc: "<strong>Tic Tac for Building Maintenance</strong> is your trusted engineering partner for building maintenance, fit-outs, and technical solutions 24/7.",
+                whatsappBtn: "💬 Chat on WhatsApp",
+                callBtn: "📞 Call Direct Now",
+                servicesHeading: "Our Professional Services",
+                servicesSub: "Providing integrated engineering solutions with the highest quality standards",
+                srv1Title: "Comprehensive Building Maintenance",
+                srv1Desc: "Comprehensive solutions for daily and institutional maintenance with high efficiency.",
+                srv2Title: "Plumbing & Sanitary",
+                srv2Desc: "Leak detection, piping, and accurate maintenance of sanitary networks.",
+                srv3Title: "Electrical & Lighting",
+                srv3Desc: "Safe wiring, control panels, and immediate troubleshooting.",
+                srv4Title: "Finishing & Decor",
+                srv4Desc: "Periodic maintenance, painting, and interior architectural development.",
+                footerInfo: "📍 State of Qatar | 📱 Phone / WhatsApp: 66608077 | ✉️ tictac.qatar@gmail.com",
+                footerCopy: "All Rights Reserved to Tic Tac for Building Maintenance © 2026"
+            },
+            ur: {
+                dir: "ltr",
+                title: "Tic Tac for Building Maintenance | قطر میں عمارت کی دیکھ بھال",
+                brandName: "Tic Tac for Building Maintenance",
+                heroBadge: "✨ قطر میں عمارت کی دیکھ بھال کے پیش پیش",
+                heroTitle: "<span>بلڈنگ مینٹیننس</span> اور جامع خدمات قطر میں.. تیز اور قابل اعتماد!",
+                heroDesc: "<strong>Tic Tac for Building Maintenance</strong> عمارت کی دیکھ بھال، مرمت اور تکنیکی حل کے لیے آپ کا قابل اعتماد پارٹنر ہے۔",
+                whatsappBtn: "💬 واٹس ایپ پر بات کریں",
+                callBtn: "📞 ابھی کال کریں",
+                servicesHeading: "ہماری پیشہ ورانہ خدمات",
+                servicesSub: "اعلیٰ ترین معیار کے ساتھ جامع انجینئرنگ حل فراہم کرنا",
+                srv1Title: "جامع عمارت کی دیکھ بھال",
+                srv1Desc: "روزمرہ کے مسائل کے لیے جامع اور تیز ترین حل۔",
+                srv2Title: "پلمبنگ اور سینیٹری",
+                srv2Desc: "لیکج کا پتہ لگانا، پائپنگ اور سینیٹری نیٹ ورک کی دیکھ بھال۔",
+                srv3Title: "بجلی اور لائٹنگ",
+                srv3Desc: "محفوظ وائرنگ، کنٹرول پینلز اور فوری فالت ٹربل شوٹنگ۔",
+                srv4Title: "فنشنگ اور سجاوٹ",
+                srv4Desc: "باقاعدہ دیکھ بھال، پینٹنگ اور اندرونی آرکیٹেকচারل ترقی۔",
+                footerInfo: "📍 قطر | 📱 فون / واٹس ایپ: 66608077 | ✉️ tictac.qatar@gmail.com",
+                footerCopy: "جملہ حقوق محفوظ ہیں Tic Tac for Building Maintenance © 2026"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('htmlTag').setAttribute('lang', lang);
+            document.getElementById('htmlTag').setAttribute('dir', t.dir);
+            document.getElementById('pageTitle').innerText = t.title;
+            document.getElementById('brandName').innerText = t.brandName;
+            document.getElementById('heroBadge').innerText = t.heroBadge;
+            document.getElementById('heroTitle').innerHTML = t.heroTitle;
+            document.getElementById('heroDesc').innerHTML = t.heroDesc;
+            document.getElementById('whatsappBtn').innerText = t.whatsappBtn;
+            document.getElementById('callBtn').innerText = t.callBtn;
+            document.getElementById('servicesHeading').innerText = t.servicesHeading;
+            document.getElementById('servicesSub').innerText = t.servicesSub;
+            document.getElementById('srv1Title').innerText = t.srv1Title;
+            document.getElementById('srv1Desc').innerText = t.srv1Desc;
+            document.getElementById('srv2Title').innerText = t.srv2Title;
+            document.getElementById('srv2Desc').innerText = t.srv2Desc;
+            document.getElementById('srv3Title').innerText = t.srv3Title;
+            document.getElementById('srv3Desc').innerText = t.srv3Desc;
+            document.getElementById('srv4Title').innerText = t.srv4Title;
+            document.getElementById('srv4Desc').innerText = t.srv4Desc;
+            document.getElementById('footerInfo').innerText = t.footerInfo;
+            document.getElementById('footerCopy').innerText = t.footerCopy;
+        }
+    </script>
+
+</body>
+</html>
